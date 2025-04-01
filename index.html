@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagonal Partition - Robot Bobby</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            overflow: hidden;
+        }
+
+        /* ✅ Main container (full screen) */
+        .container {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* ✅ Triangular Viewports */
+        .quad {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            overflow: hidden;
+        }
+
+        /* 🔺 Top Left Triangle */
+        #quad1 {
+            top: 0;
+            left: 0;
+            clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+        }
+
+        /* 🔺 Top Right Triangle */
+        #quad2 {
+            top: 0;
+            right: 0;
+            clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+        }
+
+        /* 🔻 Bottom Left Triangle */
+        #quad3 {
+            bottom: 0;
+            left: 0;
+            clip-path: polygon(50% 50%, 0% 100%, 0% 0%);
+        }
+
+        /* 🔻 Bottom Right Triangle */
+        #quad4 {
+            bottom: 0;
+            right: 0;
+            clip-path: polygon(50% 50%, 100% 100%, 0% 100%);
+        }
+
+    </style>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.131/build/three.module.js",
+                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.131/examples/jsm/"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div id="quad1" class="quad"></div>
+        <div id="quad2" class="quad"></div>
+        <div id="quad3" class="quad"></div>
+        <div id="quad4" class="quad"></div>
+    </div>
+
+    <script type="module" src="six.js"></script>
+</body>
+</html>

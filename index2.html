@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robot Bobby Threejs Template</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { background-color: black; overflow: hidden; }
+      
+      /* ✅ Ensures correct positioning of quadrants */
+      .container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          width: 100vw;
+          height: 100vh;
+          position: absolute;
+          top: 0;
+          left: 0;
+      }
+
+      .quad {
+          border: 1px solid white; /* Just for visibility */
+          width: 100%;
+          height: 100%;
+      }
+    </style>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.131/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.131/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="quad1" class="quad"></div>
+      <div id="quad2" class="quad"></div>
+      <div id="quad3" class="quad"></div>
+      <div id="quad4" class="quad"></div>
+    </div>
+
+    <script type="module" src="six.js"></script>
+  </body>
+</html>
